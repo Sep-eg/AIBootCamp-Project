@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+User create
+{% endblock %}
+
+{% block lead %}
+유저를 추가하는 페이지입니다. ID와 별명을 통해 결과를 조회하고 데이터를 제거할 수 있으니 기억해주세요!
+{% endblock %}
+
+{% block main_body %}
+<form method="POST" action="/api/user">
+    <input name="id" style="margin-bottom:10px" class="form-control" type="number" placeholder="숫자로 이루어진 ID를 입력해주세요" required/>
+    <input name="nickname" style="margin-bottom:10px" class="form-control" type="text" placeholder="별명" required/>
+    <input name="age" style="margin-bottom:10px" class="form-control" type="number" placeholder="나이를 숫자로 입력해주세요" required/>
+    <select name="gender" style="margin-bottom:10px" required/>
+        <option value="">=== 성별 ===</option>
+        <option value="1">남성</option>
+        <option value="2">여성</option>
+    </select><br>
+    <select name="job" style="margin-bottom:10px" required/>
+        <option value="">=== 직업 ===</option>
+        <option value="1">관리직</option>
+        <option value="2">전문직</option>
+        <option value="3">사무직</option>
+        <option value="5">서비스직</option>
+        <option value="6">농어업</option>
+        <option value="7">기능원</option>
+        <option value="8">장치, 기계조작 및 조립</option>
+        <option value="9">단순노무직</option>
+        <option value="13">학생, 가사, 무직</option>
+        <option value="99">군인(사병제외)</option>
+    </select><br>
+    <select name="marital" style="margin-bottom:10px" required/>
+        <option value="">=== 결혼여부 ===</option>
+        <option value="1">미혼</option>
+        <option value="2">기혼</option>
+        <option value="3">이혼</option>
+        <option value="4">사별</option>
+    </select><br>
+    <input type="submit" class="btn btn-primary" value="추가">
+</form>
+
+
+{% endblock %}

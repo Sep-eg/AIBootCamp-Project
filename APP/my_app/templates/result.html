@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+YOUR LIFE SPAN
+{% endblock %}
+
+{% block lead %}
+유저를 생성할때 입력한 ID와 별명을 입력하면 당신의 수명을 확인할 수 있습니다!
+{% endblock %}
+
+{% block main_body %}
+<form class="d-flex" method="POST" action="/api/res/user">
+    <input name="id" style="margin-bottom:10px" class="form-control" type="text" placeholder="숫자로 이루어진 ID를 입력해주세요" required/>
+    <input name="nickname" style="margin-bottom:10px" class="form-control" type="text" placeholder="별명" required/>
+    <input type="submit" class="btn btn-primary" value="조회">
+</form>
+{% endblock %}
